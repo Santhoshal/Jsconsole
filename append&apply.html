@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+
+		Append
+
+		//Returns a new list containing the contents of the given list, followed by the given element.
+
+		const appendvar=R.append(12,[1,2,3,4,5])
+		console.log(appendvar) // 1,2,3,4,5,12
+
+
+		prepend
+// Returns a new list with the given element at the front, followed by the contents of the list.
+       const prependdvar=R.append(12,[1,2,3,4,5])
+		console.log(prependdvar) // 1,2,3,4,5,12
+
+
+		Apply
+		//
+		// in venilla js 
+
+		var data= [1,4,7,8,9,10]
+		console.log(Math.max(data)) //undifind
+		console.log(Math.max(...data))  //10 
+
+	//	But in Ranmda
+		var data= [1,4,7,8,9,10]
+		console.log(Math.max,data) //10
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+
+CURRY
+
+//normal way
+
+function add(a,b,c){
+	return a+b+c;
+}
+console.log(2,3,4) //9
+console.log(2,3) // undefind
+
+
+ramda with CURRY
+
+const addcurry = R.curry(add)
+addcurry (1)(2)(3)
+addcurry(1)(2,3)
+addcurry(1,2)(3);
+// return in all are 6
+
+
+one more way CURRY
+
+//normal way
+function add(a){
+	return function(b){
+		return function(c){
+			return a+b+c
+		}
+	}
+}
+
+add(1)(2)(3) //6
+
+// with ramda
+
+const add1= add1(1);//function 
+const add2 = add(2); //function
+add(3) //6
+
+
+// ramda with map function
+
+
+// normal way of map function 
+const double =[1,2,3,4,5].map(num=> 2 * num);
+map function with ramda
+const double =R.map(R.multiply(2), [1,2,3,4,5])
+const double =R.map(R.multiply(2));
+double([1,2,3,4,5])
+// o/p : 2,4,6,8,10
+	</script>
+</head>
+<body>
+
+</body>
+</html>

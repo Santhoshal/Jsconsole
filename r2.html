@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	1 . iteration
+
+	const data =[
+	{name:"john", title:"A"},
+	{name:"peter", title:"body"},
+	{name:"abs", title:"C"},
+	{name:"sam", title:"D"},
+	{name:"cam", title:"E"}
+	]
+
+
+	//itretare using a normal map
+	const tranformdata = data.map(item=>item.name)
+	console.log(tranformdata);
+
+
+//itretare using a ramda method
+
+const tranformdata = R.map(item=>item.name, data);
+console.log(tranformdata);
+
+// another method
+
+const getname = R.prop('name');
+const tranformdata = R.map(getname, data);
+console.log(tranformdata)
+
+// another improved method
+const getname = R.prop('name');
+const extractname = R.map(getname);
+result = extractname(data);
+console.log(result)
+</script>
+</body>
+</html>

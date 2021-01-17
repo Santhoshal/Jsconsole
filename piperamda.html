@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		PIPE
+
+	It Performs left-to-right function composition. The first argument may have any arity; the remaining arguments must be unary.
+	composed of a function and genarate a new function
+
+
+
+	1 . iteration
+
+	const data =[
+	{name:"john", title:"A"},
+	{name:"peter", title:"body"},
+	{name:"abs", title:"C"},
+	{name:"sam", title:"D"},
+	{name:"cam", title:"E"}
+	]
+  
+
+  using a normal itrtaion with uppercase
+
+const tranformdata = data.map(item=>item.name.toUpperCase())
+	console.log(tranformdata);
+
+
+	 using a ramda js with pipe function  itrtaion with uppercase
+
+  const getname = R.prop('name');
+  const getuppercase = R.pipe(getname, R.toUpper)
+  const extractname = R.map(getuppercase);
+  result = extractname(data);
+  console.log(result)
+
+
+ in the data if you are having a no name only for title 
+ on that if you running a code you might getting a error 
+ so have to modiried the code stack
+
+lets write a  modified function
+
+
+const data =[
+	{name:"john", title:"A"},
+	{name:"peter", title:"body"},
+	{name:"abs", title:"C"},
+	{name:"sam", title:"D"},
+	{name:"cam", title:"E"}
+	{title:"E"}
+	]
+
+const tranformdata = data.map(item=>(item.name || '').toUpperCase())
+console.log(tranformdata);
+
+//  above method for normal method 
+
+
+if using a Ramda.js method you can use a "defaultTo" method 
+
+const getname = R.prop('name');
+  const getuppercase = R.pipe(getname, R.defaultTo(''), R.toUpper)
+  const extractname = R.map(getuppercase);
+  result = extractname(data);
+  console.log(result)
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

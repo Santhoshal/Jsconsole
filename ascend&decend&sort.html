@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		ASCEND
+
+		//
+		const p1 = {age:20}
+		const p2 = {age:40}
+		const byage = R.ascend(R.prop('age'));
+		console.log(byage(p1,p2)) // return -1
+		console.log(byage(p2,p1)) // return 1
+
+		const p1 = {age:20}
+		const p2 = {age:40}
+		const p3 = {age:60}
+		const byage = R.ascend(R.prop('age'));
+		console.log(byage,[p1,p2,p3]) //[{age:20},{age:40},{age:60}]
+
+		const p1 = {name:'a'}
+		const p2 = {name:'b'}
+		const p3 = {name:'c'}
+			const byname = R.ascend(R.prop('name'));
+		console.log(byname,[p1,p2,p3]) //[{name:'a'},{name:'b'},{name:'c'}]
+
+
+
+
+
+		Compartaor
+        const p1 = {age:20}
+		const p2 = {age:40}
+		const p3 = {age:60}
+		const numvariable = [p1,p2,p3]
+		const byage = R.comporator((a,b)=>a.age < b.age)
+console.log(numvariable.sort(byage))
+	</script>
+</head>
+<body>
+
+</body>
+</html>
